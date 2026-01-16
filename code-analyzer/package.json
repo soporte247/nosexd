@@ -1,0 +1,61 @@
+{
+  "name": "code-analyzer",
+  "version": "1.1.0",
+  "description": "Multi-language code analysis and optimization tool",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "nodemon --exec node --loader ts-node/esm src/server.ts",
+    "client:dev": "cd client && npm run dev",
+    "build": "tsc && npm run build:client",
+    "build:client": "cd client && npm run build",
+    "start": "node dist/server.js",
+    "cli": "node --loader ts-node/esm src/cli.ts",
+    "lint": "eslint src/**/*.ts",
+    "test": "vitest"
+  },
+  "keywords": [
+    "code-analysis",
+    "optimization",
+    "code-quality",
+    "multi-language"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "commander": "^11.1.0",
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "@babel/parser": "^7.23.5",
+    "@babel/traverse": "^7.23.5",
+    "ts-node": "^10.9.2",
+    "tree-sitter": "^0.20.8",
+    "tree-sitter-python": "^0.20.4",
+    "tree-sitter-javascript": "^0.20.1",
+    "tree-sitter-java": "^0.20.1",
+    "tree-sitter-ruby": "^0.20.1",
+    "tree-sitter-go": "^0.20.1",
+    "tree-sitter-rust": "^0.20.1",
+    "axios": "^1.6.2",
+    "sqlite3": "^5.1.6",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.1.2"
+  },
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/express": "^4.17.21",
+    "typescript": "^5.3.3",
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "vitest": "^1.1.0"
+  }
+}

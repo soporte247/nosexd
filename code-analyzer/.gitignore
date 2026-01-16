@@ -1,0 +1,12 @@
+.env.example
+dist/
+node_modules/
+.DS_Store
+*.log
+temp/
+client/dist/
+client/node_modules/
+.vscode/
+.idea/
+*.swp
+*.swo
